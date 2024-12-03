@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="slider.html">
+    <title>LEARNING MANAGEMENT SYSTEM</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: skyblue;
+            display: flex;
+            font-family: sans-serif;
+            padding: 20px;
+           height: 100vh;
+        }
+
+        /* profile icon that can be found in the side bar menu */
+        .profile-icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid #ddd;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-left: 30px;
+        }
+
+        /* profile icon layout */
+        .profile-icon img {
+            object-fit: cover;
+            justify-content: center;
+            align-items: center;
+        }
+        .profile-icon p {
+            font-size: 15px;
+            margin-top: 10px;
+        }
+
+        .dashboard {
+                width: 80%;
+                max-width: 800px;
+                text-align: center;
+        }
+
+        h1 {
+                color: black;
+                margin-bottom: 20px;
+        }
+
+        .content {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 80px;
+            background-color: transparent; /* Adjust the background color */
+        }
+
+        /* style for the logo */
+        .logo {
+            width: 200px; /* Adjust the size of your logo */
+            height: auto;
+            margin-right: 20px; /* Space between the logo and the header title */
+            border-radius: 100px;
+        }
+
+        /*sidebar*/
+        .sidebar {
+            width: 300px;
+            height: 900px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding-top: 20px;
+            margin: 30px;
+            border-radius: 20px;
+        }
+
+        .sidebar-header {
+            text-align: center;
+            padding: 0px;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .sidebar-menu {
+            list-style: none;
+            padding: 20px;
+        }
+
+        .sidebar-menu li {
+            margin: 0px 0;
+            padding: 5px;
+        }
+
+        .sidebar-menu li a {
+            color: white;
+            font-size: 20px;
+            text-decoration: none;
+            display: block;
+            padding: 10px 20px;
+            transition: background-color 0.3s;
+        }
+
+        /*menu of the sidebar*/
+        .sidebar-menu li a:hover {
+            background-color: dimgray;
+        }
+
+
+        .content {
+            margin-top: -500px;
+            
+        }
+
+        .Header {
+            margin-left: 230px;
+            position: fixed;
+        }
+
+        .titleHeader h1 {
+            font-size: 40px;
+            margin-left: 220px;
+            margin-top: -75px;
+            color: navy;
+            font-weight: bold;
+            font-size: 45px;
+        }
+
+        .imgHeader img {
+            margin-top: 0px;
+            margin-left: 100px;
+            height: 100px;
+            width: 100px;
+        }
+
+        /* container of the slideshow*/
+        .slideshow-container {
+            margin-top: 100px;
+        }
+        #button {
+            background-color: skyblue;
+        }
+
+
+        /* Next & previous buttons */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        /* Caption text */
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Number text (1/3 etc) */
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        /* Fading animation */
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        /*slideshow design*/
+        .mySlides{
+            display: none;
+        }
+
+        /*slideshow fading*/
+        .fade {
+            animation-name: fade;
+            animation-duration: 0.5s;
+        }
+        @keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
+        }
+
+        /* On smaller screens, decrease text size */
+        @media only screen and (max-width: 300px) {
+            .prev, .next,.text {font-size: 11px}
+        }
+        /* The dot/bullet/indicator container */
+        .dot-container {
+            text-align: center;
+            padding: 20px;
+            background: transparent;
+        } 
+
+          /* search bar container */
+                .search-container {
+                float: right;
+                margin-top: 100px;
+                margin-left: 1000px;
+                left: 1500px;
+                position: relative;
+                bottom: 1000px;
+                }
+
+                /* input field styling */
+                .search-container input {
+                  width: 300px;
+                  padding: 10px;
+                  border: 2px solid #ddd;
+                  border-radius: 5px 0 0 5px;
+                  outline: none;
+                  font-size: 15px;
+                }
+
+                /* button styling */
+                .search-container button {
+                  padding: 10px 15px;
+                  border: 1px solid white;
+                  border-left: none;
+                  background-color: gray;
+                  color: black;
+                  border-radius: 0 5px 5px 0;
+                  cursor: pointer;
+                  font-size: 10px;
+                  float: left;
+                  position: fixed;
+                  height: 40px;
+                  font-size: 15px;
+                }
+
+                .search-container button:hover {
+                  background-color: skyblue;
+                }
+
+
+
+
+    </style>
+</head>
+<body>
+
+    <div class="Header">
+        <div class="imgHeader">
+        <img src="school_logo.png"></div>
+    <div class="titleHeader"><h1>Learning Management System</h1></div>
+    </div>
+
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2>Hello [Username]</h2>
+        </div>
+       
+    <div class="profile-icon">
+        <img src="profile_icon.png" style="width:100px; height: 100px;">
+    </div>
+        
+    <div>    
+        <!-- menu of the side bar -->
+        <ul class="sidebar-menu">
+              <li><a href="index(home).html">Home</a></li>
+            <li><a href="index1(dashboard).html">Dashboard</a></li>
+            <li><a href="index2(subjects).html">Subjects</a></li>
+            <li><a href="index3(announcements).html">Announcements</a></li>
+            <li><a href="#">Assignments</a></li>
+            <li><a href="#">Settings</a></li>
+             <li><a href="hp1.html">Logout</button></a></li>
+        </ul>
+    </div>
+
+
+    <div class="slideshow-container">
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    
+    <!-- slides per image -->
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 2</div>
+    <img src="building.png" style="width:500px; height: 300px">
+  </div>
+
+    <!-- slides per image -->
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 2</div>
+    <img src="faculty.png" style="width:500px; height: 300px;">
+  </div>
+
+
+            <!-- search bar  -->
+        <div class="search-container">
+    <form action="#" method="#">
+      <input type="text" placeholder="Search here..." name="query" required>
+      <button type="#">Search</button>
+    </form>
+  </div>
+
+<script>
+    /*slideshow*/
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+
+  if (n > slides.length) { slideIndex = 1; }
+  if (n < 1) { slideIndex = slides.length; }
+
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " active";
+}
+
+document.querySelectorAll("img").forEach(img => {
+  img.onerror = function () {
+    this.src = "assets/fallback.jpg"; // Provide a fallback image path
+  };
+});
+
+</script>   
+</body>     
+</html>
+ 

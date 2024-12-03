@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | LEARNING MANAGEMENT SYSTEM</title>
+  <style>
+    /* Reset and box model */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body styling */
+    body {
+      font-family: sans-serif;
+      background-color: skyblue;
+    }
+
+    /* Header container */
+    .header {
+      position: relative;
+      padding: 20px;
+      right: 20%;
+    }
+
+    /* Logo styling */
+    .header img {
+      width: 200px; /* Adjust size as needed */
+      height: 200px;
+      position: absolute;
+      top: 20px;
+      left: 350px;
+    }
+
+    /* Title styling */
+    .header h1 {
+      font-size: 50px;
+      color: navy;
+      font-weight: bold;
+      position: absolute;
+      top: 85px;
+      left: 570px; /* Adjust to provide spacing from the logo */
+    }
+
+            /*sidebar*/
+        .sidebar {
+            width: 300px;
+            height: 900px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding-top: 20px;
+            margin: 30px;
+            border-radius: 20px;
+        }
+
+        .sidebar-header {
+            text-align: center;
+            padding: 0px;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .sidebar-menu {
+            list-style: none;
+            padding: 20px;
+        }
+
+        .sidebar-menu li {
+            margin: 0px 0;
+            padding: 5px;
+        }
+
+        .sidebar-menu li a {
+            color: white;
+            font-size: 20px;
+            text-decoration: none;
+            display: block;
+            padding: 10px 20px;
+            transition: background-color 0.3s;
+        }
+
+        /*menu of the sidebar*/
+        .sidebar-menu li a:hover {
+            background-color: dimgray;
+        }
+
+        /* profile icon that can be found in the side bar menu */
+        .profile-icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid #ddd;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-left: 30px;
+        }
+
+        /* profile icon layout */
+        .profile-icon img {
+            object-fit: cover;
+            justify-content: center;
+            align-items: center;
+        }
+        .profile-icon p {
+            font-size: 15px;
+            margin-top: 10px;
+        }
+
+	        /* Search bar container */
+	    .search-container {
+	      position: absolute;
+	      top: 20px; /* Adjust this value to align with your header */
+	      left: 1450px; /* This ensures it is on the right side */
+	    }
+
+	    /* Input field styling */
+	    .search-container input {
+	      width: 250px;
+	      padding: 10px;
+	      border: 2px solid #ddd;
+	      border-radius: 5px 0 0 5px;
+	      outline: none;
+	      font-size: 15px;
+	    }
+
+	    /* Button styling */
+	    .search-container button {
+	      padding: 10px 15px;
+	      border: 1px solid white;
+	      border-left: none;
+	      background-color: gray;
+	      color: black;
+	      border-radius: 0 5px 5px 0;
+	      cursor: pointer;
+	      font-size: 15px;
+	      position: fixed;
+	    }
+
+	    .search-container button:hover {
+	      background-color: skyblue;
+	    }
+
+      .slideshow-container{           
+            width: 100%;
+            max-width: 800px;
+            overflow: hidden;
+            border-radius: 5px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            justify-items: center;
+            position: relative;
+        }
+        .slides im {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .slides {
+            display: none;
+            width: 100%;
+        }
+
+        .active {
+            display: block;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 50%;
+            user-select: none;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .dots {
+            text-align: center;
+            margin-top: 10px;
+            
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 5px;
+            background-color: #ddd;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+            top: 10%;   
+        }
+        .dot.active {
+            background-color: #4682b4; /* Steel Blue */
+        }
+
+  </style>
+}
+</head>
+<body>
+  
+
+
+    <div class="sidebar">
+            <div class="sidebar-header">
+                <h2>Hello [Username]</h2>
+            </div>
+       
+        <div class="profile-icon">
+            <img src="profile_icon.png" style="width:100px; height: 100px;">
+        </div>
+
+         <div class="search-container">
+          <form action="#" method="#">
+            <input type="text" placeholder="Search here..." name="query" required>
+            <button type="submit">Search</button>
+          </form>
+        </div>
+        
+        <div>    
+            <!-- menu of the side bar -->
+            <ul class="sidebar-menu">
+                  <li><a href="hp.html">Home</a></li>
+                <li><a href="index1(dashboard).html">Dashboard</a></li>
+                <li><a href="index2(subjects).html">Subjects</a></li>
+                <li><a href="index3(announcements).html">Announcements</a></li>
+                <li><a href="#">Assignments</a></li>
+                <li><a href="#">Settings</a></li>
+                 <li><a href="hp1.html">Logout</button></a></li>
+            </ul>
+        </div>  
+    </div> 
+    <div class="content.container" style="width: 80%; background-color: skyblue; margin-left: 18%;height: 1000px; ">
+
+         <!-- Header Section -->
+              <div class="header">
+                <img src="school_logo.png" alt="School Logo">
+                <h1>Learning Management System</h1>
+              </div>
+             
+            <div class="slide">
+                    <center>
+                     <div class="slideshow-container" style="position: relative; top: 200px;">
+                    <div class="slides active">
+                        <img src="pnroa hs.png" alt="Slide 1" style="width:100%; height: 400px;" >
+                    </div>
+                    <div class="slides">
+                        <img src="pedro oloy.png" alt="Slide 3" style="width:100%; height: 400px;">
+                    </div>
+
+                    <!-- Navigation Buttons -->
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+               
+                <!-- Dots/Indicators -->
+                <div class="dots">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                 </div>
+             </div>
+             <center>
+             <div style="position: relative; margin-top: 15%;">
+              <div style="display: inline-flex; gap: 20px;">      
+                 <div class="gallery">
+                          <a target="_blank" href="pnroa bsp.png">
+                            <img src="pnroa bsp.png" alt="Cinque Terre" width="400" height="250">
+                          </a>
+                        </div>
+
+                        <div class="gallery">
+                          <a target="_blank" href="teachers.png">
+                            <img src="teachers.png" alt="Forest" width="400" height="250">
+                          </a>
+                        </div>
+
+                        <div class="gallery">
+                          <a target="_blank" href="pnora faculty.png">
+                            <img src="pnroa faculty.png" alt="Northern Lights" width="400" height="250">
+                          </a>
+                     
+                        </div>  
+                 </div>
+                 <br><br>
+                 <div> 
+                  <div style="display: inline-flex; gap: 20px;">
+                      <div>
+                       <iframe width="560" height="315" src="https://www.youtube.com/embed/ekr2nIex040?si=WEC-LvT52UtHiyVY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>      
+                   </div>
+
+                       <div>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3946.110949481693!2d124.64937277585469!3d8.488592297212248!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32fff2e7ff6d2ec9%3A0x180566d5585d5301!2sCapitol%20University!5e0!3m2!1sen!2sph!4v1733198763470!5m2!1sen!2sph" width="560" height="315" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                       </div>
+                     </div>   
+                 </div>        
+         </div>
+
+    </div>         
+    <script>
+        let slideIndex = 0;
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("slides");
+            let dots = document.getElementsByClassName("dot");
+
+            // Hide all slides
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            // Remove active class from dots
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+
+            slideIndex++;
+            if (slideIndex > slides.length) slideIndex = 1;
+
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+
+            setTimeout(showSlides, 3000); // Change slide every 3 seconds
+        }
+
+        function plusSlides(n) {
+            slideIndex += n - 1; // Adjust index based on button click
+            showSlides();
+        }
+
+        function currentSlide(n) {
+            slideIndex = n - 1;
+            showSlides();
+        }
+
+        // Initialize slideshow
+        showSlides();
+    </script>
+
+</body>
+</html>

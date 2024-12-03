@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Announcements | Learning Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: skyblue;
+            display: flex;
+            font-family: sans-serif;
+            padding: 20px;
+            height: 700px;
+        }
+
+        /* profile icon that can be found in the side bar menu */
+        .profile-icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid #ddd;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-left: 30px;
+        }
+
+        /* profile icon layout */
+        .profile-icon img {
+            object-fit: cover;
+            justify-content: center;
+            align-items: center;
+        }
+        .profile-icon p {
+            font-size: 15px;
+            margin-top: 10px;
+        }
+
+        .dashboard {
+                width: 80%;
+                max-width: 800px;
+                text-align: center;
+        }
+
+        h1 {
+                color: black;
+                margin-bottom: 20px;
+        }
+
+        .content {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 80px;
+            background-color: transparent; /* Adjust the background color */
+        }
+
+        /* Style for the logo */
+        .logo {
+            width: 200px; /* Adjust the size of your logo */
+            height: auto;
+            margin-right: 20px; /* Space between the logo and the header title */
+            border-radius: 100px;
+        }
+
+         /*sidebar*/
+        .sidebar {
+            width: 300px;
+            height: 900px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding-top: 20px;
+            margin: 30px;
+            border-radius: 20px;
+        }
+
+        .sidebar-header {
+            text-align: center;
+            padding: 0px;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .sidebar-menu {
+            list-style: none;
+            padding: 20px;
+        }
+
+        .sidebar-menu li {
+            margin: 0px 0;
+            padding: 5px;
+        }
+
+        .sidebar-menu li a {
+            color: white;
+            font-size: 20px;
+            text-decoration: none;
+            display: block;
+            padding: 10px 20px;
+            transition: background-color 0.3s;
+        }
+
+        .sidebar-menu li a:hover {
+            background-color: dimgray;
+        }
+        .content {
+            margin-top: -500px;
+            
+        }
+        .header h1 {
+            margin-left: -140px;
+            margin-top: 10px;
+            color: navy;
+        }
+        .imgHeader img {
+            margin-top: 0px;
+            margin-left: 100px;
+            height: 100px;
+            width: 100px;
+        }
+
+        #searchBar {
+            padding: 10px;
+            font-size: 16px;
+            width: 60%;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .filter-section {
+            margin-bottom: 20px;
+        }
+
+        /*announcement list*/
+        .announcements-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .announcement-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .announcement-card h3 {
+            margin-bottom: 10px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .announcement-card p {
+            margin-bottom: 10px;
+        }
+
+        .announcement-card a {
+            color: blue;
+            text-decoration: none;
+        }
+        .con2 {
+            margin-left: 200px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2>Hello [Username]</h2>
+        </div>
+        <div class="profile-icon">
+            <img src="profile_icon.png" alt="Profile Icon">
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="hp.html">Home</a></li>
+            <li><a href="index1(dashboard).html">Dashboard</a></li>
+            <li><a href="index2(subjects).html">Subjects</a></li>
+            <li><a href="index3(announcements).html">Announcements</a></li>
+            <li><a href="#">Assignments</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="login.html">Logout</a></li>
+        </ul>
+    </div>
+
+   <div class="con2">
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="header">
+            <h1>Announcements</h1></div>
+            <input type="text" id="searchBar" placeholder="Search announcements...">
+        </header>
+
+        <!-- Filter Section -->
+        <div class="filter-section">
+            <label for="categoryFilter">Category:</label>
+            <select id="categoryFilter">
+                <option value="all">All</option>
+                <option value="academic">Academic</option>
+                <option value="events">Events</option>
+                <option value="general">General</option>
+            </select>
+        </div>
+
+        <!-- Announcements List -->
+        <div class="announcements-list">
+            <!-- Example Announcement -->
+            <div class="announcement-card" data-category="#">
+                <h3>Midterm Exam Schedule Released</h3>
+                <p><strong>Date:</strong> Nov 28, 2024</p>
+                <p>Check the schedule for upcoming midterm exams. Ensure you're prepared!</p>
+                <a href="#">Download Schedule</a>
+            </div>
+
+            <div class="announcement-card" data-category="#">
+                <h3>Annual Science Fair</h3>
+                <p><strong>Date:</strong> Dec 5, 2024</p>
+                <p>Join the science fair to showcase your innovative projects and ideas!</p>
+                <a href="#">Read More</a>
+            </div>
+
+            <div class="announcement-card" data-category="#">
+                <h3>Campus Closed on Public Holiday</h3>
+                <p><strong>Date:</strong> Nov 30, 2024</p>
+                <p>The campus will remain closed on Nov 30 due to a public holiday.</p>
+                <a href="#">Read More</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script>
+        function searchAnnouncements() {
+    const searchInput = document.getElementById('searchBar').value.toLowerCase();
+    const announcements = document.querySelectorAll('.announcement-card');
+
+    announcements.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        card.style.display = text.includes(searchInput) ? 'block' : 'none';
+    });
+}
+
+function filterAnnouncements() {
+    const filter = document.getElementById('categoryFilter').value;
+    const announcements = document.querySelectorAll('.announcement-card');
+
+    announcements.forEach(card => {
+        const category = card.getAttribute('data-category');
+        card.style.display = (filter === 'all' || filter === category) ? 'block' : 'none';
+    });
+}
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="slider.html">
+    <title>Dashboard | LEARNING MANAGEMENT SYSTEM</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: skyblue;
+            display: flex;
+            font-family: sans-serif;
+            padding: 20px;
+            height: 700px;
+        }
+
+        /* profile icon that can be found in the side bar menu */
+        .profile-icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid #ddd;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-left: 30px;
+        }
+
+        /* profile icon layout */
+        .profile-icon img {
+            object-fit: cover;
+            justify-content: center;
+            align-items: center;
+        }
+        .profile-icon p {
+            font-size: 15px;
+            margin-top: 10px;
+        }
+
+        .dashboard {
+                width: 80%;
+                max-width: 800px;
+                text-align: center;
+        }
+
+        h1 {
+                color: black;
+                margin-bottom: 20px;
+        }
+
+        .content {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 80px;
+            background-color: transparent; /* Adjust the background color */
+        }
+
+        /* Style for the logo */
+        .logo {
+            width: 200px; /* Adjust the size of your logo */
+            height: auto;
+            margin-right: 20px; /* Space between the logo and the header title */
+            border-radius: 100px;
+        }
+
+        /*sidebar*/
+        .sidebar {
+            width: 300px;
+            height: 900px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding-top: 20px;
+            margin: 30px;
+            border-radius: 20px;
+        }
+
+        .sidebar-header {
+            text-align: center;
+            padding: 0px;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .sidebar-menu {
+            list-style: none;
+            padding: 20px;
+        }
+
+        .sidebar-menu li {
+            margin: 0px 0;
+            padding: 5px;
+        }
+
+        .sidebar-menu li a {
+            color: white;
+            font-size: 20px;
+            text-decoration: none;
+            display: block;
+            padding: 10px 20px;
+            transition: background-color 0.3s;
+        }
+
+        .sidebar-menu li a:hover {
+            background-color: dimgray;
+        }
+        .content {
+            margin-top: -500px;
+            
+        }
+        .header {
+            margin-left: 230px;
+            position: fixed;
+        }
+         
+        .titleHeader h1 {
+            font-size: 40px;
+            margin-left: 330px;
+            margin-top:  20px;
+            color: navy;
+            font-weight: bold;
+            font-size: 45px;
+        }
+
+        .imgHeader img {
+            margin-top: 0px;
+            margin-left: 100px;
+            height: 100px;
+            width: 100px;
+        }
+
+        .slideshow-container {
+            margin-top: 100px;
+        }
+        #button {
+            background-color: skyblue;
+        }
+
+        .bar-chart {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+            position: absolute;
+            width: 500px;
+            height: 300px;
+            border-left: 2px solid powderblue;
+            border-bottom: 2px solid powderblue;
+            margin-bottom: 800px;
+            margin-left: 600px;
+            margin-top: -200px;
+        }
+        .bar {
+            width: 80px;
+            margin: 0 10px;
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+        }
+        .bar div {
+            width: 100%;
+            background-color: midnightblue;
+            text-align: center;
+            color: white;
+        }
+        .bar-label {
+            margin-top: 10px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    
+    <div class="titleHeader"><h1>Dashboard</h1></div>
+    </div>
+
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2>Hello [Username]</h2>
+        </div>
+       
+    <div class="profile-icon">
+        <img src="profile_icon.png" style="width:100px; height: 100px;">
+    </div>
+        
+    <div>    
+        <ul class="sidebar-menu">
+              <li><a href="hp.html">Home</a></li>
+            <li><a href="index1(dashboard).html">Dashboard</a></li>
+            <li><a href="index2(subjects).html">Subjects</a></li>
+            <li><a href="index3(announcements).html">Announcements</a></li>
+            <li><a href="#">Assignments</a></li>
+            <li><a href="#">Settings</a></li>
+             <li><a href="login">Logout</button></a></li>
+        </ul>
+    </div>
+            <div>
+                 <div class="bar-chart">
+                <div class="bar">
+                  <div style="height: 250px;">3000</div>
+                  <div class="bar-label">Enrollees</div>
+                </div>
+                <div class="bar">
+                  <div style="height: 150px; background-color: midnightblue;">2500</div>
+                  <div class="bar-label">Active</div>
+                </div>
+                <div class="bar">
+                  <div style="height: 50px; background-color: midnightblue;">500</div>
+                  <div class="bar-label">Dropout</div>
+                </div>
+              </div>
+</div>
+</body>
+</hmtl>
